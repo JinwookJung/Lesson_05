@@ -19,6 +19,8 @@ namespace Lesson_05
 
             int randomCar;
 
+            
+
 
 
 
@@ -34,14 +36,16 @@ namespace Lesson_05
             }
 
 
-                //Alternate way to declare and initialize an array
-                //string[] carMakeList = new string[6];
-                //carMakeList[0] = "Honda";
-                //carMakeList[1] = "BMW";
-                //carMakeList[0] = "Mercedes";
-                //carMakeList[0] = "Jeep";
-                //carMakeList[0] = "Ford";
-                //carMakeList[0] = "Jagure";
+            //Alternate way to declare and initialize an array
+            /*
+            string[] carMakeList = new string[6];
+            carMakeList[0] = "Honda";
+            carMakeList[1] = "BMW";
+            carMakeList[0] = "Mercedes";
+            carMakeList[0] = "Jeep";
+            carMakeList[0] = "Ford";
+            carMakeList[0] = "Jagure";
+            */
 
                 //Output the value of 
                 for (int index = 0; index < carMakeList.Length; index++)
@@ -50,11 +54,30 @@ namespace Lesson_05
                     Console.WriteLine(carMakeList[index]);
                 }
 
+                Console.WriteLine("+++++++++++++++++++++++++++++");
+                Console.WriteLine("+     Original Car List+     ");
+                Console.WriteLine("+++++++++++++++++++++++++++++");
+
                 for (int index = 0; index < tempCarMakeList.Length; index++)
                 {
                     
-                    Console.WriteLine(tempCarMakeList[index]);
+                    //Console.WriteLine(tempCarMakeList[index]);
+
+                    randomCar = generateRandomCar(rnd);
+                    
+                    if (carMakeList[ramdomCar] != "unavailable")
+                    {
+                        tempCarMakeList[index] = carMakeList[randomCar];
+                        
+                        carMakeList[randomCar] = "unavailable";
+                    
+                    }
+
                 }
+
+                Console.WriteLine("+++++++++++++++++++++++++++++");
+                Console.WriteLine("+       New Car List+        ");
+                Console.WriteLine("+++++++++++++++++++++++++++++");
                 
 
                 //CAN CHANGE ELEMENT OF ARRAY
